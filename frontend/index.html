@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Recipe Analyzer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Smart Recipe Analyzer</h1>
+    <p class="subtitle">Enter the ingredients you have on hand, separated by commas.</p>
+
+    <form id="recipe-form" novalidate>
+      <label for="ingredients-input" class="visually-hidden">Ingredients</label>
+      <textarea
+        id="ingredients-input"
+        rows="4"
+        placeholder="e.g. chicken breast, rice, broccoli, garlic"
+      ></textarea>
+      <p id="input-error" class="error-text" role="alert" hidden></p>
+      <button type="submit" id="submit-btn">Generate Recipes</button>
+    </form>
+
+    <div id="loading" class="loading" hidden>
+      <span class="spinner" aria-hidden="true"></span>
+      <span>Generating recipes...</span>
+    </div>
+
+    <p id="api-error" class="error-text" role="alert" hidden></p>
+
+    <section id="results" class="results" aria-live="polite"></section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
